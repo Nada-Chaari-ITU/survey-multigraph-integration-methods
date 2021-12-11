@@ -1,7 +1,5 @@
 # survey-multigraph-integration-methods
 
-# Survey multigraph integration methods
-
 >**Biological CBTs estimated by single-view and multigraph integration methods, and circular graphs illustrating the top 10 most representative cortical morphological connections between brain regions**
 <p align="center">
   <img src="./Fig1.PNG">
