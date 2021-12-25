@@ -24,9 +24,9 @@ If you like to update the file by adding the unlisted open-source articles, feel
 
 <a name="MultiGraph" />
 
-## Graph integration and fusion 
+# Graph integration and fusion 
 
-### Single graph fusion
+## Single graph fusion
 | Title                                                        | Paper | Author | Dataset | Code | Youtube Video |  Proceeding/Journal/Year |
 |:------------------------------------------------------------:|:----------------------:|:----------------------:|:----------------------:|:----------------------:| :----------------------:|:----------------------: 
 | Deep Graph Normalizer: A Geometric Deep Learning Approach for Estimating Connectional Brain Templates | [ARXIV](https://arxiv.org/pdf/2012.14131.pdf)  | Mustafa Burak Gurbuz |  [ADNI 3](http://adni.loni.usc.edu/)  | [Python](https://github.com/basiralab/DGN) | [10 min](https://www.youtube.com/watch?v=Q_WLY2ZNxRk) | MICCAI 2020 | 
@@ -37,7 +37,7 @@ If you like to update the file by adding the unlisted open-source articles, feel
 
 <a name="singleView" />
 
-### Multi-graph integration
+## Multi-graph integration
 
 | Title                                                        | Paper | Author | Dataset | Code | Youtube Video | Proceeding/Journal/Year |
 |:------------------------------------------------------------:|:----------------------:|:----------------------:|:----------------------:|:----------------------:| :----------------------:|:----------------------:  
@@ -51,5 +51,5 @@ The diagram below illustrates the criteria used to evaluate the performance of t
   <img src="./Fig2.png">
 </p>
 
-
+# Example Result
 
