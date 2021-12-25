@@ -72,6 +72,14 @@ where `num_views` is number of cortical morphological brain networks, called als
 ```
 [num_Subs x num_ROIs x num_ROIs x num_Views]
 ```
+# Code
+
+* First, download the codes of all single-view fusion methods(SNF, NAG-FS, SM-NetFusion) and multi-graph fusion methods (SCA, netNorm, MVCF-Net,cMGINet, DGN) (the links sources are in available in the table above).
+* Second, create single-view dataset with dimension shape `[num_Subs x num_ROIs x num_ROIs]` and multi-view dataset with dimension shape `[num_Subs x num_ROIs x num_ROIs x num_Views]`
+* Then, run fusion methods codes using both created datasets for each case to generate integrated template, called CBT, for each fusion method.
+* Next, we evaluate the performance of single-view and multi-graph fusion methods separately using the generated CBTs in terms of CBT centeredness, biomarker reproducibility, node-wise similarity, global-level similarity, and distance-based similarity, as illustrated by the figure above in evaluation strategy section. As evaluation measures, we compute at the node-graph scale 8 topological measures (betweeness centrality, eigenvector centrality, PageRank, ...), local efficiency, and participation coefficient metrics. At the global-graph level, we compute the pre-mentioned 8 topological measures over the ROIs, Frobenius distance, Kullback-Leibler divergence, graph modularity, local efficiency, and global efficiency metrics. Additionally, we compute the KL-divergence, Hamming distance, and Jaccard distance measures on all pairs graph fusion methods.
+
+Note: the codes available above in file and file reproduce the evaluation results that compare the performance and which are displayed in plots file.
 
 # Example Result
 
