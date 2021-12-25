@@ -56,15 +56,22 @@ The diagram below illustrates the criteria used to evaluate the performance of t
 # Data format
 We run a connectomic dataset which consists of 308 human male subjects (M) and 391 human male subjects (F) from the Brain Genomics Superstruct Project (GSP) dataset (Holmes et al., [2015] ( https://www.nature.com/articles/sdata201531/fig_tab )). Each subject is represented by 4 cortical morphological brain networks (Nebli et al., [2020] ( https://link.springer.com/article/10.1007/s11682-019-00123-6 )) derived from maximum principal curvature, mean cortical thickness, mean sulcal depth, and average curvature measurements. For each hemisphere, the cortical surface is reconstructed from T1-weighted MRI using FreeSurfer pipeline (Fischl et al., [2012] ( https://pubmed.ncbi.nlm.nih.gov/22248573/ ))and parcellated into 35 cortical regions of interest (ROIs) using Desikan-Killiany cortical atlas (Desikan et al., [2006] ( https://www.sciencedirect.com/science/article/pii/S1053811906000437?casa_token=_b-7Vr1dT9gAAAAA:5OoJBGcMy2AUtVzRGlHtxggoUjIwiMA5H_UFxxiV0ST4WckwB5Zbnv7RwYyO5INXqYnJ-v2S )). The corresponding connectivity strength between two ROIs is derived by computing the absolute difference in their average cortical attribute (e.g., thickness).
 
-Note that we use 4 cortical morphological brain networks as to compare between multi-graph fusion methods, while we use 1 cortical morphological brain network (cortical thickness) to compare between single-view integration methods. A single-view brain network can be represented as an adjacency matrix with shape
+Note that we use 4 cortical morphological brain networks as to compare between multi-graph fusion methods, while we use 1 cortical morphological brain network (cortical thickness) to compare between single-view integration methods. Each subject of single-view brain networks dataset can be represented as an adjacency matrix with shape
 ```
 [num_ROIs x num_ROIs]
 ```
-where `num_ROIs` is number of region of interests in the brain graph, and a multi-graph brain netwroks can be represented as a stacked adjacency matrices with shape
+where `num_ROIs` is number of region of interests in the brain graph, thus, single-view brain networks dataset can be represented as a stacked adjacency matrices with shape
 ```
-[num_ROIs x num_ROIs x num_views]
+[num_Subs x num_ROIs x num_ROIs]
 ```
-where `num_views` is number of cortical morphological brain networks, called also views (eg.cortical thickness).
+where num_sub is number of subjects in a dataset. In the case of multi-graph fusion, each subject of multi-view brain networks dataset can be represented as a stacked adjacency matrices with shape
+```
+[num_ROIs x num_ROIs x num_Views]
+```
+where `num_views` is number of cortical morphological brain networks, called also views (eg.cortical thickness), thus, multi-view brain networks dataset can be represented as a stacked adjacency matrices with shape
+```
+[num_Subs x num_ROIs x num_ROIs x num_Views]
+```
 
 # Example Result
 
