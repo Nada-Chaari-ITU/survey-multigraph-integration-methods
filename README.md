@@ -54,21 +54,17 @@ The diagram below illustrates the criteria used to evaluate the performance of t
 </p>
 
 # Data format
-TIS-Net framework needs `source` and `target` data to run. Each of these data represents a bunch of subjects and their brain graphs (networks). Note that our framework is based on single-view brain graphs. A brain graph can be represented as an adjacency matrix with shape
+We run a connectomic dataset which consists of 308 human male subjects (M) and 391 human male subjects (F) from the Brain Genomics Superstruct Project (GSP) dataset (Holmes et al., [2015] ( https://www.nature.com/articles/sdata201531/fig_tab )). Each subject is represented by 4 cortical morphological brain networks (Nebli et al., [2020] ( https://link.springer.com/article/10.1007/s11682-019-00123-6 )) derived from maximum principal curvature, mean cortical thickness, mean sulcal depth, and average curvature measurements. For each hemisphere, the cortical surface is reconstructed from T1-weighted MRI using FreeSurfer pipeline (Fischl et al., [2012] ( https://pubmed.ncbi.nlm.nih.gov/22248573/ ))and parcellated into 35 cortical regions of interest (ROIs) using Desikan-Killiany cortical atlas (Desikan et al., [2006] ( https://www.sciencedirect.com/science/article/pii/S1053811906000437?casa_token=_b-7Vr1dT9gAAAAA:5OoJBGcMy2AUtVzRGlHtxggoUjIwiMA5H_UFxxiV0ST4WckwB5Zbnv7RwYyO5INXqYnJ-v2S )). The corresponding connectivity strength between two ROIs is derived by computing the absolute difference in their average cortical attribute (e.g., thickness).
+
+Note that we use 4 cortical morphological brain networks as to compare between multi-graph fusion methods, while we use 1 cortical morphological brain network (cortical thickness) to compare between single-view integration methods. A single-view brain network can be represented as an adjacency matrix with shape
 ```
 [num_ROIs x num_ROIs]
 ```
-where `num_ROIs` is number of region of interests in the brain graph, different for `source` and `target` datasets since our framework offers an inter-modality mapping. However, a more compact way to store this matrix is vectorizing its upper-triangular part so that this matrix can be represented as a vector with
+where `num_ROIs` is number of region of interests in the brain graph, and a multi-graph brain netwroks can be represented as a stacked adjacency matrices with shape
 ```
-num_ROIs x (num_ROIs - 1) / 2
+[num_ROIs x num_ROIs x num_views]
 ```
-elements. Let us define this number as `num_features` since, intuitively, each subject has this amount of features. <br/><br/>
-Now, we can specify the shape of `source` and `target` datasets which are
-```
-[num_subjects x num_features]
-```
-`num_features` is different for `source` and `target` datasets.<br/><br/>
-You can either supply an external dataset by assigning `DATASET=E` in `config.py` file or use a simulated dataset (created using random normal distribution) by specifying number of ROIs in both `source` and `target` domains via changing `N_SOURCE_NODES` and `N_TARGET_NODES` variables, respectively. You can also specify number of subjects with `N_SUBJECTS` variable.
+where `num_views` is number of cortical morphological brain networks, called also views (eg.cortical thickness).
 
 # Example Result
 
