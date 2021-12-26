@@ -72,9 +72,9 @@ where `num_views` is number of cortical morphological brain networks, called als
 ```
 [num_Subs x num_ROIs x num_ROIs x num_Views]
 ```
-# Code
+# Code 
 
-* First, download the codes of all single-view fusion methods(SNF, NAG-FS, SM-NetFusion) and multi-graph fusion methods (SCA, netNorm, MVCF-Net,cMGINet, DGN) (the links sources are in available in the table above).
+* First, install the codes of all single-view fusion methods(SNF, NAG-FS, SM-NetFusion) and multi-graph fusion methods (SCA, netNorm, MVCF-Net,cMGINet, DGN) (the links sources are available in the table above. From the column 'Code', click on the link).
 * Second, create single-view dataset with dimension shape `[num_Subs x num_ROIs x num_ROIs]` and multi-view dataset with dimension shape `[num_Subs x num_ROIs x num_ROIs x num_Views]`
 * Third, use k-folds cross-validation to divide each dataset into training dataset and testing dataset. 
 * Then, train fusion methods using multi-view training dataset and single-view training dataset, separately, to learn how to integrate single-view graph networks-based dataser into a unique templates, called CBTs.
@@ -82,6 +82,17 @@ where `num_views` is number of cortical morphological brain networks, called als
 * Finally, evaluate the performance of generated CBTs in terms of CBT centeredness, biomarker reproducibility, node-wise similarity, global-level similarity, and distance-based similarity, as illustrated by the figure above in evaluation strategy section. As evaluation measures, we compute at the node-graph scale 8 topological measures (betweeness centrality, eigenvector centrality, PageRank, etc...), local efficiency, and participation coefficient metrics. At the global-graph level, we compute the pre-mentioned 8 topological measures over the ROIs, Frobenius distance, Kullback-Leibler divergence, graph modularity, local efficiency, and global efficiency metrics. Additionally, we compute the KL-divergence, Hamming distance, and Jaccard distance measures on all pairs graph fusion methods.
 
 Note: The zip folders entitled 'Reproducibility of the plots for multi-view fusion methods.zip' and 'Reproducibility of the plots for single-view fusion methods' above provide all codes to reproduce the evaluation results (topological measures, KL-divergence, Frobenius distance, local efficiency, etc...) and which are displayed in the file entitled Plots.zip above to compare the integration performance of single-view and multi-graph fusion methods, sepeartely.
+
+# Installation
+
+* The required installation for each fusion method is available when you click on the link in the column 'Code' of the table above.
+* To run our codes in zip folders above entitled 'Reproducibility of the plots for multi-view fusion methods.zip' and 'Reproducibility of the plots for single-view fusion methods', you need other dependencies which can be installed via:
+
+$ pip install numpy
+$ pip install scipy
+$ pip install seaborn
+$ pip install pandas
+$ pip install matplotlib
 
 # Example Result
 
