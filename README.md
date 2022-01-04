@@ -9,10 +9,10 @@
 # Introduction
 
 >**A connectional brain template (CBT)** is an integral graph-based fingrprint of a population of brain networks also regarded as an average connectome. CBTs are powerful tools for creating representative maps of brain connectivity, disentangling the typical from the atypical variations across the population samples. Estimating a well-centered and discriminative CBT for populations of heterogenous brain networks such as structural, functional, and morphological networks is more challenging since these networks sit on complex manifolds and there is no easy way to fuse them. Thus, we list here all papers of 7 years (2014-2020), some journals, and MICCAI (2019-2020) papers that fuse multiple brain network and identify biomarkers (distinctive connectivities fingerprinting) of different population such as healthy and disordered populations. The existing fusion models embedded in the papers are basing on:
-* [geometric deep learning multi-view graph network normalization](#singleView)
-* [deep learning cluster-based graph network integration](#singleView)
-* [manifold optimization clustering-based network integration](#singleView)
-* [machine learning cluster-based network fusion](#MultiGraph)
+* [geometric deep learning multi-view graph network normalization](#MultiGraph)
+* [deep learning cluster-based graph network integration](#MultiGraph)
+* [manifold optimization clustering-based network integration](#MultiGraph)
+* [machine learning cluster-based network fusion](#singleView)
 
 
 <p align="center">
@@ -26,7 +26,7 @@ If you like to update the file by adding the unlisted open-source articles, feel
 
 # Graph integration and fusion 
 
-## Single graph fusion
+## Multi-graph fusion
 | Title                                                        | Paper | Author | Dataset | Code | Youtube Video |  Proceeding/Journal/Year |
 |:------------------------------------------------------------:|:----------------------:|:----------------------:|:----------------------:|:----------------------:| :----------------------:|:----------------------: 
 | Deep Graph Normalizer: A Geometric Deep Learning Approach for Estimating Connectional Brain Templates | [ARXIV](https://arxiv.org/pdf/2012.14131.pdf)  | Mustafa Burak Gurbuz |  [ADNI 3](http://adni.loni.usc.edu/)  | [Python](https://github.com/basiralab/DGN) | [10 min](https://www.youtube.com/watch?v=Q_WLY2ZNxRk) | MICCAI 2020 | 
@@ -37,7 +37,7 @@ If you like to update the file by adding the unlisted open-source articles, feel
 
 <a name="singleView" />
 
-## Multi-graph integration
+## Single-graph integration
 
 | Title                                                        | Paper | Author | Dataset | Code | Youtube Video | Proceeding/Journal/Year |
 |:------------------------------------------------------------:|:----------------------:|:----------------------:|:----------------------:|:----------------------:| :----------------------:|:----------------------:  
