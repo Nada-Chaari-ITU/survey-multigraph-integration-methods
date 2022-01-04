@@ -9,10 +9,10 @@
 # Introduction
 
 >**A connectional brain template (CBT)** is an integral graph-based fingrprint of a population of brain networks also regarded as an average connectome. CBTs are powerful tools for creating representative maps of brain connectivity, disentangling the typical from the atypical variations across the population samples. Estimating a well-centered and discriminative CBT for populations of heterogenous brain networks such as structural, functional, and morphological networks is more challenging since these networks sit on complex manifolds and there is no easy way to fuse them. Thus, we list here all papers of 7 years (2014-2020), some journals, and MICCAI (2019-2020) papers that fuse multiple brain network and identify biomarkers (distinctive connectivities fingerprinting) of different population such as healthy and disordered populations. The existing fusion models embedded in the papers are basing on:
-* [geometric deep learning multi-view graph network normalization](#MultiGraph)
-* [deep learning cluster-based graph network integration](#MultiGraph)
-* [manifold optimization clustering-based network integration](#MultiGraph)
-* [machine learning cluster-based network fusion](#singleView)
+* [geometric deep learning multi-view graph network normalization](#singleView)
+* [deep learning cluster-based graph network integration](#singleView)
+* [manifold optimization clustering-based network integration](#singleView)
+* [machine learning cluster-based network fusion](#MultiGraph)
 
 
 <p align="center">
